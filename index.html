@@ -21,22 +21,25 @@
             text-align: center;
             overflow: hidden;
             position: relative;
+            flex-direction: column;
         }
         .container {
             position: relative;
             z-index: 2;
             animation: fadeIn 2s ease-in-out;
         }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        .logo {
+            width: 180px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        .typewriter-wrapper {
+            display: flex;
+            justify-content: center;
         }
         .typewriter {
             font-size: 1.8rem;
             font-weight: bold;
-            display: inline-block;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid white;
@@ -49,11 +52,6 @@
         }
         @keyframes blink {
             50% { border-color: transparent; }
-        }
-        .logo {
-            width: 180px;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -100,7 +98,9 @@
     </div>
     <div class="container">
         <img src="Nowe.ua robi 01 (1).png" alt="Логотип" class="logo">
-        <p class="typewriter">Щось унікальне на підході...</p>
+        <div class="typewriter-wrapper">
+            <p class="typewriter">Щось унікальне на підході...</p>
+        </div>
     </div>
 </body>
 </html>
