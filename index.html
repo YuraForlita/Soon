@@ -33,9 +33,22 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        .slogan {
-            font-size: 1.5rem;
-            opacity: 0.9;
+        .typewriter {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
         }
         .logo {
             width: 180px;
@@ -86,8 +99,8 @@
         <div class="circle"></div>
     </div>
     <div class="container">
-        <img src="Nowe.ua robi 01 (1).png" alt="Логотип" class="logo">
-        <h1>Скоро....</h1>
+        <img src="https://drive.google.com/uc?export=view&id=1yTmRZbEotw0dD_GOKCNhQP_BHhMp1ha2" alt="Логотип" class="logo">
+        <p class="typewriter">Щось унікальне на підході...</p>
     </div>
 </body>
 </html>
