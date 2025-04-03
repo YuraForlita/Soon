@@ -9,85 +9,109 @@
     <meta name="robots" content="index, follow">
     <title>Щось унікальне на підході</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #0d1b2a, #1b263b);
-            color: white;
-            text-align: center;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
         }
-        header .logo img {
-            width: 150px;
-        }
-        .content {
-            max-width: 600px;
-            padding: 20px;
+        .container {
+            position: relative;
+            z-index: 2;
             animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            font-size: 3rem;
-            margin: 10px 0;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-        .contact-block {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-        .contact-block:hover {
-            transform: scale(1.05);
-        }
-        .contact-block h2 {
+            font-size: 3.5rem;
             margin-bottom: 10px;
-            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
-        .contact-block a {
-            color: #ffcc00;
-            text-decoration: none;
+        .typewriter {
+            font-size: 2rem;
             font-weight: bold;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
         }
-        .contact-block a:hover {
-            text-decoration: underline;
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        .company-info {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            max-width: 600px;
+            line-height: 1.5;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .background-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: moveCircle 5s infinite alternate ease-in-out;
+        }
+        .circle:nth-child(1) { top: 10%; left: 10%; animation-duration: 7s; }
+        .circle:nth-child(2) { top: 70%; left: 80%; animation-duration: 9s; }
+        .circle:nth-child(3) { top: 50%; left: 40%; animation-duration: 6s; }
+        .circle:nth-child(4) { top: 85%; left: 20%; animation-duration: 8s; }
+        .circle:nth-child(5) { top: 15%; left: 60%; animation-duration: 10s; }
+        @keyframes moveCircle {
+            from { transform: translateY(-15px); }
+            to { transform: translateY(15px); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="nowe.ua logo robi full colors (1).png" alt="Логотип NOWE">
-        </div>
-    </header>
-    <main>
-        <div class="content">
-            <img src="Nowe.ua robi 01 (1).png" alt="Милий робот" class="robot">
-            <h1>NOWE.COM.UA</h1>
-            <p>Ми працюємо над чимось особливим! Слідкуйте за новинами, щоб дізнатися більше про нашу унікальну розробку.</p>
-        </div>
-    </main>
-    <footer>
-        <div class="contact-block">
-            <h2>Зв'язатися з нами</h2>
-            <p>Email: <a href="mailto:info@nowe.com.ua">info@nowe.com.ua</a></p>
-            <p>Telegram: <a href="https://t.me/YOUR_TELEGRAM_HERE">@YOUR_TELEGRAM_HERE</a></p>
-            <p>Instagram: <a href="https://instagram.com/YOUR_INSTAGRAM_HERE">@YOUR_INSTAGRAM_HERE</a></p>
-        </div>
-    </footer>
+    <div class="background-elements">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="container">
+        <img src="Nowe.ua robi 01 (1).png" alt="Логотип" class="logo">
+        <h1>nowe.com.ua</h1>
+        <p class="company-info">Ми працюємо над чимось особливим! Слідкуйте за новинами, щоб дізнатися більше про нашу унікальну розробку.</p>
+    </div>
 </body>
 </html>
