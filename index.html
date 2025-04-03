@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Скоро</title>
+    <meta name="description" content="Щось унікальне на підході – готуємось представити новий продукт!">
+    <meta name="keywords" content="унікальне, технології, інновації">
+    <meta name="author" content="Назва компанії">
+    <meta name="robots" content="index, follow">
+    <title>Щось унікальне на підході</title>
     <style>
         * {
             margin: 0;
@@ -15,31 +19,28 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: linear-gradient(135deg, #0d1b2a, #1b263b);
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
             overflow: hidden;
             position: relative;
-            flex-direction: column;
         }
         .container {
             position: relative;
             z-index: 2;
             animation: fadeIn 2s ease-in-out;
         }
-        .logo {
-            width: 180px;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
-        }
-        .typewriter-wrapper {
-            display: flex;
-            justify-content: center;
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
         .typewriter {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: bold;
+            display: inline-block;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid white;
@@ -52,6 +53,17 @@
         }
         @keyframes blink {
             50% { border-color: transparent; }
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        .company-info {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            max-width: 600px;
+            line-height: 1.5;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -67,20 +79,20 @@
         }
         .circle {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             animation: moveCircle 5s infinite alternate ease-in-out;
         }
-        .circle:nth-child(1) { top: 10%; left: 15%; animation-duration: 6s; }
-        .circle:nth-child(2) { top: 60%; left: 75%; animation-duration: 8s; }
-        .circle:nth-child(3) { top: 40%; left: 50%; animation-duration: 7s; }
-        .circle:nth-child(4) { top: 80%; left: 30%; animation-duration: 6s; }
-        .circle:nth-child(5) { top: 20%; left: 70%; animation-duration: 9s; }
+        .circle:nth-child(1) { top: 10%; left: 10%; animation-duration: 7s; }
+        .circle:nth-child(2) { top: 70%; left: 80%; animation-duration: 9s; }
+        .circle:nth-child(3) { top: 50%; left: 40%; animation-duration: 6s; }
+        .circle:nth-child(4) { top: 85%; left: 20%; animation-duration: 8s; }
+        .circle:nth-child(5) { top: 15%; left: 60%; animation-duration: 10s; }
         @keyframes moveCircle {
-            from { transform: translateY(-10px); }
-            to { transform: translateY(10px); }
+            from { transform: translateY(-15px); }
+            to { transform: translateY(15px); }
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
@@ -97,10 +109,10 @@
         <div class="circle"></div>
     </div>
     <div class="container">
-        <img src="Nowe.ua robi 01 (1).png" alt="Логотип" class="logo">
-        <div class="typewriter-wrapper">
-            <p class="typewriter">Щось унікальне на підході....</p>
-        </div>
+        <img src="https://drive.google.com/uc?export=view&id=1yTmRZbEotw0dD_GOKCNhQP_BHhMp1ha2" alt="Логотип" class="logo">
+        <h1>Назва компанії</h1>
+        <p class="company-info">Ми працюємо над чимось особливим! Слідкуйте за новинами, щоб дізнатися більше про нашу унікальну розробку.</p>
+        <p class="typewriter">Щось унікальне на підході...</p>
     </div>
 </body>
 </html>
