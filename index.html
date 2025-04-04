@@ -10,80 +10,82 @@
     <title>Щось унікальне на підході</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
         }
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #0d1b2a, #1b263b);
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: linear-gradient(135deg, #0d1b2a, #1b263b);
+          color: white;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          overflow: hidden;
+          position: relative;
         }
         .container {
-            position: relative;
-            z-index: 2;
-            animation: fadeIn 2s ease-in-out;
+          position: relative;
+          z-index: 2;
+          animation: fadeIn 2s ease-in-out;
+          padding: 20px;
         }
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+          font-size: 3.5rem;
+          margin-bottom: 10px;
+          text-transform: uppercase;
+          letter-spacing: 3px;
         }
         .typewriter {
-            font-size: 2rem;
-            font-weight: bold;
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid white;
-            width: 0;
-            animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+          font-size: 2rem;
+          font-weight: bold;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          border-right: 3px solid white;
+          width: 0;
+          animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
         }
         @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
+          from { width: 0; }
+          to { width: 100%; }
         }
         @keyframes blink {
-            50% { border-color: transparent; }
+          50% { border-color: transparent; }
         }
         .logo {
-            width: 200px;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
+          width: 200px;
+          margin-bottom: 20px;
+          animation: float 3s ease-in-out infinite;
         }
         .company-info {
-            font-size: 1.2rem;
-            margin-top: 10px;
-            max-width: 600px;
-            line-height: 1.5;
+          font-size: 1.2rem;
+          margin-top: 10px;
+          max-width: 600px;
+          line-height: 1.5;
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         .background-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          z-index: 1;
         }
         .circle {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: moveCircle 5s infinite alternate ease-in-out;
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 50%;
+          animation: moveCircle 5s infinite alternate ease-in-out;
         }
         .circle:nth-child(1) { top: 10%; left: 10%; animation-duration: 7s; }
         .circle:nth-child(2) { top: 70%; left: 80%; animation-duration: 9s; }
@@ -91,27 +93,112 @@
         .circle:nth-child(4) { top: 85%; left: 20%; animation-duration: 8s; }
         .circle:nth-child(5) { top: 15%; left: 60%; animation-duration: 10s; }
         @keyframes moveCircle {
-            from { transform: translateY(-15px); }
-            to { transform: translateY(15px); }
+          from { transform: translateY(-15px); }
+          to { transform: translateY(15px); }
         }
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
         }
-    </style>
+    
+        .top-left-logo {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          width: 120px;
+          z-index: 10;
+        }
+    
+        .contact-box {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          z-index: 10;
+          background: rgba(255, 255, 255, 0.05);
+          padding: 15px 20px;
+          border-radius: 12px;
+          text-align: left;
+          font-size: 0.9rem;
+          backdrop-filter: blur(5px);
+        }
+    
+        .contact-box a {
+          color: white;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          gap: 8px;
+        }
+    
+        .contact-box svg {
+          width: 20px;
+          height: 20px;
+          fill: white;
+        }
+    
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 2rem;
+          }
+          .company-info {
+            font-size: 1rem;
+            padding: 0 10px;
+          }
+          .logo {
+            width: 140px;
+          }
+          .top-left-logo {
+            width: 90px;
+            top: 10px;
+            left: 10px;
+          }
+          .contact-box {
+            right: 10px;
+            bottom: 10px;
+            font-size: 0.8rem;
+            padding: 10px;
+          }
+        }
+      </style>
 </head>
 <body>
     <div class="background-elements">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
     </div>
+  
+    <!-- Логотип у верхньому лівому куті -->
+    <img src="nowe.ua logo robi full colors (1).png" alt="Логотип" class="top-left-logo">
+  
+    <!-- Контейнер основного контенту -->
     <div class="container">
-        <img src="Nowe.ua robi 01 (1).png" alt="Логотип" class="logo">
-        <h1>nowe.com.ua</h1>
-        <p class="company-info">Ми працюємо над чимось особливим! Слідкуйте за новинами, щоб дізнатися більше про нашу унікальну розробку.</p>
+      <img src="Nowe.ua robi 01 (1).png" alt="Логотип" class="logo">
+      <h1>nowe.com.ua</h1>
+      <p class="company-info">Ми працюємо над чимось особливим! Слідкуйте за новинами, щоб дізнатися більше про нашу унікальну розробку.</p>
     </div>
-</body>
+  
+    <!-- Контактний блок -->
+    <div class="contact-box">
+      <a href="mailto:contact@nowe.com.ua" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm8 7.586l-5.707-5.707L5.586 7 12 13.414 18.414 7l-1.707-1.707L12 11.586z"/></svg>
+        contact@nowe.com.ua
+      </a>
+      <a href="https://t.me/nowe" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+            <path d="M 20.572266 3.0117188 C 20.239891 2.9764687 19.878625 3.028375 19.515625 3.171875 C 19.065625 3.348875 12.014406 6.3150313 5.4414062 9.0820312 L 3.2695312 9.9960938 C 2.4285313 10.337094 2.0039062 10.891672 2.0039062 11.638672 C 2.0039062 12.161672 2.22525 12.871063 3.28125 13.289062 L 6.9472656 14.757812 C 7.2642656 15.708813 8.0005469 17.916906 8.1855469 18.503906 C 8.2955469 18.851906 8.5733906 19.728594 9.2753906 19.933594 C 9.4193906 19.982594 9.5696563 20.007813 9.7226562 20.007812 C 10.165656 20.007812 10.484625 19.801641 10.640625 19.681641 L 12.970703 17.710938 L 15.800781 20.328125 C 15.909781 20.439125 16.486719 21 17.261719 21 C 18.228719 21 18.962234 20.195016 19.115234 19.416016 C 19.198234 18.989016 21.927734 5.2870625 21.927734 5.2890625 C 22.172734 4.1900625 21.732219 3.6199531 21.449219 3.3769531 C 21.206719 3.1694531 20.904641 3.0469688 20.572266 3.0117188 z M 19.910156 5.171875 C 19.533156 7.061875 17.478016 17.378234 17.166016 18.865234 L 13.029297 15.039062 L 10.222656 17.416016 L 11 14.375 C 11 14.375 16.362547 8.9468594 16.685547 8.6308594 C 16.945547 8.3778594 17 8.2891719 17 8.2011719 C 17 8.0841719 16.939781 8 16.800781 8 C 16.675781 8 16.506016 8.1197812 16.416016 8.1757812 C 15.272669 8.8885973 10.404094 11.662239 8.0078125 13.025391 L 4.53125 11.636719 L 6.21875 10.927734 C 10.51775 9.1177344 18.174156 5.893875 19.910156 5.171875 z"></path>
+        </svg>
+        @nowe
+      </a>
+      <a href="https://www.instagram.com/nowe" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 26 26">
+            <path d="M 7.546875 0 C 3.390625 0 0 3.390625 0 7.546875 L 0 18.453125 C 0 22.609375 3.390625 26 7.546875 26 L 18.453125 26 C 22.609375 26 26 22.609375 26 18.453125 L 26 7.546875 C 26 3.390625 22.609375 0 18.453125 0 Z M 7.546875 2 L 18.453125 2 C 21.527344 2 24 4.46875 24 7.546875 L 24 18.453125 C 24 21.527344 21.53125 24 18.453125 24 L 7.546875 24 C 4.472656 24 2 21.53125 2 18.453125 L 2 7.546875 C 2 4.472656 4.46875 2 7.546875 2 Z M 20.5 4 C 19.671875 4 19 4.671875 19 5.5 C 19 6.328125 19.671875 7 20.5 7 C 21.328125 7 22 6.328125 22 5.5 C 22 4.671875 21.328125 4 20.5 4 Z M 13 6 C 9.144531 6 6 9.144531 6 13 C 6 16.855469 9.144531 20 13 20 C 16.855469 20 20 16.855469 20 13 C 20 9.144531 16.855469 6 13 6 Z M 13 8 C 15.773438 8 18 10.226563 18 13 C 18 15.773438 15.773438 18 13 18 C 10.226563 18 8 15.773438 8 13 C 8 10.226563 10.226563 8 13 8 Z"></path>
+            </svg>
+        @nowe
+      </a>
+    </div>
+  </body>
 </html>
