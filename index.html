@@ -123,6 +123,17 @@
       backdrop-filter: blur(2px);
     }
 
+    .circle::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.25);
+      pointer-events: none;
+      z-index: 4;
+    }
+
     .inside-object {
       display: flex;
       align-items: center;
@@ -130,11 +141,22 @@
     }
 
     .inside-object img {
-      width: 70%;
-      height: 70%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
+      clip-path: circle(35% at 50% 50%);
+      filter: blur(0.5px) contrast(1.1);
     }
-
+    .bubble-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
+      border-radius: 50%;
+      z-index: 3;
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
     .circle:nth-child(1) { top: 10%; left: 10%; animation-duration: 7s; }
     .circle:nth-child(2) { top: 70%; left: 80%; animation-duration: 9s; }
     .circle:nth-child(3) { top: 50%; left: 40%; animation-duration: 6s; }
@@ -216,8 +238,9 @@
 
   <div class="background-elements">
     <div class="circle">
+      <div class="bubble-overlay"></div>
       <div class="inside-object">
-        <img src="hairdryer.png" alt="hairdryer" />
+        <img src="Nowe.ua robi 04.png" alt="Battery" />
       </div>
     </div>
     <div class="circle"></div>
