@@ -161,11 +161,17 @@
     .circle:nth-child(2) { top: 70%; left: 80%; animation-duration: 9s; }
     .circle:nth-child(3) { top: 30%; left: 30%; animation-duration: 6s; }
     .circle:nth-child(4) { top: 85%; left: 20%; animation-duration: 8s; }
-    .circle:nth-child(5) { top: 15%; left: 60%; animation-duration: 10s; }
-    .circle:nth-child(6) { top: 65%; left: 60%; animation-duration: 6s; }
+    .circle:nth-child(5) { top: 5%; left: 60%; animation-duration: 10s; }
+    .circle:nth-child(6) { top: 75%; left: 60%; animation-duration: 6s; }
     .circle:nth-child(7) { top: 50%; left: 15%; animation-duration: 8s; }
-    .circle:nth-child(8) { top: 25%; left: 85%; animation-duration: 8s; }
-
+    .circle:nth-child(8) { top: 25%; left: 75%; animation-duration: 8s; }
+    @media (max-width: 768px) {
+      .bubble:nth-child(2),
+      .bubble:nth-child(7),
+      .bubble:nth-child(3) {
+        display: none;
+      }
+    }
     @keyframes moveCircle {
       from { transform: translateY(-15px); }
       to { transform: translateY(15px); }
