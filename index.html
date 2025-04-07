@@ -115,6 +115,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      z-index: 2;
     }
 
     .inside-object {
@@ -122,11 +123,15 @@
       height: 80px;
       background-color: rgba(255,255,255,0.3);
       border-radius: 50%;
-      font-size: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+    }
+
+    .inside-object img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .circle:nth-child(1) { top: 10%; left: 10%; animation-duration: 7s; }
@@ -209,7 +214,11 @@
 <body>
 
   <div class="background-elements">
-    <div class="circle"><div class="inside-object"><img src="Nowe.ua robi 04.png" alt="Battery" /></div></div>
+    <div class="circle">
+      <div class="inside-object">
+        <img src="Nowe.ua robi 04.png" alt="Логотип" />
+      </div>
+    </div>
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
