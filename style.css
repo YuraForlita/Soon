@@ -269,8 +269,8 @@ html, body {
     border-radius: 15px;
     color: white;
     text-align: center;
-    max-width: 620px !important;
-    width: 97% !important;
+    max-width: 600px;
+    width: 90%;
     backdrop-filter: blur(5px);
   }
   
@@ -282,4 +282,26 @@ html, body {
     color: white;
     border-radius: 8px;
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .modal-content {
+      font-size: 0.9rem;
+      padding: 20px;
+    }
+  
+    .modal-content h2,
+    .modal-content h3,
+    .modal-content h4 {
+      font-size: 1rem;
+    }
+  
+    .modal-content p {
+      font-size: 0.9rem;
+    }
+  
+    .close-modal-btn {
+      font-size: 0.85rem;
+      padding: 6px 12px;
+    }
   }
